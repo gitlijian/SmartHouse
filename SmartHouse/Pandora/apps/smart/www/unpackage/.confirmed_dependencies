@@ -1,0 +1,123 @@
+{
+  "wisdom/wisdom_main.html": {
+    "resources": [
+      "img/seeYouTommorow.png"
+    ],
+    "refer": []
+  },
+  "telecontrol/headerAndFooter.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/login.css",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "telecontrol/telecontrol.html"
+    ],
+    "refer": [
+      "wisdom/wisdom_main.html",
+      "group/group_main.html",
+      "telecontrol/telecontrol.html",
+      "video/video_main.html",
+      "group/group_second.html"
+    ]
+  },
+  "group/group_main.html": {
+    "resources": [
+      "img/gray/chushi.png",
+      "img/gray/meiqi.png",
+      "img/gray/dianshi.png",
+      "img/gray/jinhua.png",
+      "img/gray/saodi.png",
+      "img/gray/chuang.png",
+      "img/gray/kongtiao.png",
+      "img/gray/deng.png",
+      "img/gray/jidinghe.png",
+      "css/app.css",
+      "js/service.js",
+      "js/mui.min.js",
+      "css/mui.min.css"
+    ],
+    "refer": []
+  },
+  "telecontrol/telecontrol.html": {
+    "resources": [
+      "img/main icon/Dehumidifier.png",
+      "img/main icon/Ariconditioner.png",
+      "css/app.css",
+      "img/main icon/windows.png",
+      "img/main icon/air.png",
+      "img/main icon/Sweep.png",
+      "img/main icon/lamp.png",
+      "img/main icon/gas.png",
+      "img/main icon/settopbox.png",
+      "img/main icon/television.png",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "js/service.js"
+    ],
+    "refer": [
+      "telecontrol/controller.html"
+    ]
+  },
+  "video/video_main.html": {
+    "resources": [
+      "img/background_img/vedio1.jpg",
+      "img/background_img/vedio4.jpeg",
+      "img/background_img/vedio3.jpg",
+      "img/play_btn.png",
+      "css/app.css",
+      "js/service.js",
+      "js/mui.min.js",
+      "css/mui.min.css"
+    ],
+    "refer": []
+  },
+  "login/login.html": {
+    "resources": [
+      "js/tools.js",
+      "js/app.js",
+      "js/service.js",
+      "img/password.png",
+      "js/mui.min.js",
+      "img/username.png",
+      "css/login.css",
+      "fonts/mui.ttf",
+      "img/main icon/mainicon.png",
+      "css/mui.min.css",
+      "css/style.css",
+      "js/mui.enterfocus.js",
+      "js/md5.js"
+    ],
+    "refer": [
+      "telecontrol/headerAndFooter.html"
+    ]
+  },
+  "telecontrol/controller.html": {
+    "resources": [
+      "js/tools.js",
+      "js/service.js",
+      "img/main icon/add.png",
+      "img/main icon/up_down.png",
+      "img/main icon/left_right.png",
+      "img/background_img/control_bg.png",
+      "img/main icon/low.png",
+      "img/main icon/modle.png",
+      "img/main icon/on_off.png",
+      "js/mui.min.js",
+      "css/app.css",
+      "css/login.css",
+      "css/mui.min.css",
+      "img/gray/kongtiao.png"
+    ],
+    "refer": []
+  },
+  "group/group_second.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/app.css",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "js/service.js"
+    ]
+  }
+}

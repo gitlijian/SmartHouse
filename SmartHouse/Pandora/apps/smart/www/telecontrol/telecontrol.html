@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>telecontrol</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="../css/app.css"/>
+		<style>
+		    
+			.mui-grid-view.mui-grid-9{
+				margin-top: 9%;
+				background-color:#F7F7F7;
+				width: 95%;
+				border-radius: 20px;
+				box-shadow:0px 5px 8px rgba(202,202,202,0.2);
+				}
+			.mui-content>.mui-table-view:first-child{
+				margin: 30px 10px;
+			}
+			.main-icon{
+			zoom: 20%;
+			}
+			.mui-grid-view.mui-grid-9 .mui-table-view-cell{
+				margin-top: 1.5em;
+				margin-bottom: 1.5em;
+				border: none;
+			}
+				@media(min-width: 750px){
+				.mui-grid-view.mui-grid-9 .mui-table-view-cell{
+				margin-top: 1em;
+				margin-bottom: 0.6em;
+				border: none;
+				}
+				.mui-grid-view.mui-grid-9{
+				margin-top: 10%;
+				background-color:#F7F7F7;
+				width: 92%;
+				border-radius: 20px;
+				box-shadow:0px 5px 8px rgba(202,202,202,0.2);
+			
+			}
+			}
+			.mui-table-view-cell.mui-media.mui-col-xs-4.mui-col-sm-3{
+				border-right:solid 1px gainsboro;
+			}  
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content">
+			    <center>
+		        <ul class="mui-table-view mui-grid-view mui-grid-9" id="allDevice">
+		            <!--<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+		            	<a href="#" id="television">
+		                    <span class="main-icon"><img src="../img/main icon/television.png"></span>
+		                    <div class="mui-media-body" style="color: #72b9e8;">电视</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+		            	<a href="#" id="tvBox">
+		                    <span class="main-icon"><img src="../img/main icon/settopbox.png"></span>
+		                    <div class="mui-media-body" style="color:#01c8a7 ;">机顶盒</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+		            	<a href="#" id="light">
+		                    <span class="main-icon"><img src="../img/main icon/lamp.png"></span>
+		                    <div class="mui-media-body" style="color: #EF7B6B;">灯</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+		            	<a href="#" id="condition">
+		                    <span class="main-icon"><img src="../img/main icon/Ariconditioner.png"></span>
+		                    <div class="mui-media-body"style="color:#84c8c4;">空调</div></a></li>
+		           
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+		            	<a href="#" id="sweeper">
+		                    <span class="main-icon"><img src="../img/main icon/Sweep.png"></span>
+		                    <div class="mui-media-body" style="color: #f5ce25;">扫地机</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+		            	<a href="#" id="window">
+		                    <span class="main-icon"><img src="../img/main icon/windows.png"></span>
+		                    <div class="mui-media-body" style="color:#c5bef5;">窗户</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+		            	<a href="#" id="airCleaner">
+		                    <span class="main-icon"><img src="../img/main icon/air.png"></span>
+		                    <div class="mui-media-body" style="color:#1097df;">空气净化器</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+		            	<a href="#" id="dehumidifier">
+		                    <span class="main-icon"><img src="../img/main icon/Dehumidifier.png"></span>
+		                    <div class="mui-media-body"style="color:#4dd1ea;"">除湿机</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+		           	    <a href="#" id="gas">
+		                    <span class="main-icon"><img src="../img/main icon/gas.png"></span>
+		                    <div class="mui-media-body" style="color: #ff3b3b;">煤气</div></a></li>-->
+		        </ul> 
+		        </center>
+		</div>
+	</body>
+	<script src="../js/mui.min.js"></script>
+	<script src="../js/service.js"></script>
+	<script>
+		mui.init({
+			swipeBack:false //启用右滑关闭功能
+		});
+///////////////////////////
+// 在这里定义所有的变量
+		var controller_webview;
+		var controller_TV_webview;
+		var tap_deviceID;
+		var tap_userName;
+		var tap_deviceType;
+///////////////////////////
+
+		mui.plusReady(function () {
+			// console.log("进入plusReady");
+			getData();
+			
+			controller_webview = 
+				plus.webview.create('controller_easy.html', 'controller', {}, {});
+			
+			controller_TV_webview = 
+				plus.webview.create('controller_TV.html', 'controllerTV', {}, {});
+				
+			
+			// 该事件用于监听子页面数据是否准备完毕
+			window.addEventListener('subPageDataReady', function(event) {
+				var isReady = event.detail.isReady;
+				plus.nativeUI.closeWaiting();
+				if (isReady == 0) {
+					if (tap_deviceType == 0) {
+					// 是通用的仅有开关功能的子页面数据准备完毕，则显示
+					// controller_webview即可
+						controller_webview.show();
+					}
+					else if (tap_deviceType == 1) { // 电视机页面准备完毕
+						controller_TV_webview.show();
+					}
+					else {
+						plus.nativeUI.toast("什么也没匹配到");
+					}
+					
+				}
+				else {
+					plus.nativeUI.toast("数据获取失败，请稍后再试");
+				}
+			});
+		});
+		mui("#allDevice").on('tap','li',function(){
+			tap_deviceID = this.getAttribute("deviceID");
+			tap_userName = localStorage.getItem("UserID");
+			tap_deviceType = this.getAttribute("devicetype");
+			console.log("tap_deviceType = " + tap_deviceType);
+			if (tap_deviceType == 0) {
+				// console.log("进入了这里");
+				plus.nativeUI.showWaiting();
+				var invokeStr = "getData('" + tap_userName + 
+				"', '" + tap_deviceID + "')";
+				// console.log(invokeStr);
+				controller_webview.evalJS(invokeStr);
+			}
+			else if (tap_deviceType == 1) {
+				plus.nativeUI.showWaiting();
+				var invokeStr = "getData('" + tap_userName + 
+				"', '" + tap_deviceID + "')";
+				controller_TV_webview.evalJS(invokeStr);
+				// plus.nativeUI.toast("即将添加");
+			}
+			else {
+				plus.nativeUI.toast("什么都没匹配到");
+			}
+			
+			// console.log("过来了");
+			
+		});
+		var getData = function(){
+			//alert("已进入方法getData");
+			var getContacts = { 
+				reqKey: "SmartHouse_getdeviceList",
+				input:{
+					UserID:localStorage.getItem("UserID")
+				}
+			};
+			// console.log(JSON.stringify(getContacts));
+			service.OnDoPostServerJson(getContacts, false, false, function(jsonData){//jsonData即返回的json数据 并且为json格式
+				if (jsonData.result == 0){
+					//alert("数据接收成功");
+	  				if(jsonData["ansData"]){
+		  				dealData(jsonData["ansData"]);
+	  				}
+	  			} else {
+					// plus.nativeUI.toast(jsonData.result);
+					alert(jsonData.result);
+				}
+			}); 
+		}
+		
+		function dealData(data){
+			//alert("开始列图标哟");
+			var allDevice = document.getElementById("allDevice");
+			allDevice.innerHTML = "";
+			for(var i = 0; i < data.length; i++){
+				// console.log("deviceType=" + data[i].deviceType);
+				allDevice.innerHTML +=  
+				'<li deviceType = ' + data[i].deviceType + ' deviceID = "'+ data[i].deviceID +'" class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">\n'
+		            	+'<a href="#">\n'
+		                +'<span class="main-icon">\n'
+		                +'<img src="'+ data[i].devicePicture + '"></span>\n'
+		                +'<div class="mui-media-body" style="color: #72b9e8;">'+ data[i].deviceName + '</div>\n'
+		                +'</a></li>\n';
+			}
+			// console.log(allDevice.innerHTML);
+			
+		}
+		
+	</script>
+</html>

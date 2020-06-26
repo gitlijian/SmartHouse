@@ -1,0 +1,802 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F18E2AD91DB0B770002EE679 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F18E2AD81DB0B770002EE679 /* main.m */; };
+		F18E2ADC1DB0B770002EE679 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F18E2ADB1DB0B770002EE679 /* AppDelegate.m */; };
+		F18E2ADF1DB0B770002EE679 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F18E2ADE1DB0B770002EE679 /* ViewController.m */; };
+		F18E2AE21DB0B770002EE679 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F18E2AE01DB0B770002EE679 /* Main.storyboard */; };
+		F18E2AE41DB0B770002EE679 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F18E2AE31DB0B770002EE679 /* Assets.xcassets */; };
+		F18E2AE71DB0B770002EE679 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F18E2AE51DB0B770002EE679 /* LaunchScreen.storyboard */; };
+		F18E2AF21DB0B770002EE679 /* SmartHouseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F18E2AF11DB0B770002EE679 /* SmartHouseTests.m */; };
+		F18E2AFD1DB0B770002EE679 /* SmartHouseUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F18E2AFC1DB0B770002EE679 /* SmartHouseUITests.m */; };
+		F18E2B211DB0B988002EE679 /* Pandora in Resources */ = {isa = PBXBuildFile; fileRef = F18E2B201DB0B988002EE679 /* Pandora */; };
+		F18E2B241DB0BB91002EE679 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F18E2B231DB0BB91002EE679 /* libstdc++.tbd */; };
+		F18E2B261DB0BB9A002EE679 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F18E2B251DB0BB9A002EE679 /* libxml2.tbd */; };
+		F18E2B281DB0BBA0002EE679 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F18E2B271DB0BBA0002EE679 /* libz.tbd */; };
+		F18E2B2A1DB0BBB2002EE679 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F18E2B291DB0BBB2002EE679 /* SystemConfiguration.framework */; };
+		F18E2B2C1DB0BBB7002EE679 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F18E2B2B1DB0BBB7002EE679 /* UIKit.framework */; };
+		F18E2B2E1DB0BBBD002EE679 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F18E2B2D1DB0BBBD002EE679 /* Foundation.framework */; };
+		F18E2B301DB0BBC1002EE679 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F18E2B2F1DB0BBC1002EE679 /* CFNetwork.framework */; };
+		F18E2B321DB0BBC8002EE679 /* CoreAudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F18E2B311DB0BBC8002EE679 /* CoreAudioKit.framework */; };
+		F18E2B341DB0BBCE002EE679 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F18E2B331DB0BBCE002EE679 /* CoreAudio.framework */; };
+		F18E2B361DB0BBD5002EE679 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F18E2B351DB0BBD5002EE679 /* CoreMedia.framework */; };
+		F18E2B381DB0BBDA002EE679 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F18E2B371DB0BBDA002EE679 /* MediaPlayer.framework */; };
+		F18E2B3A1DB0BBE1002EE679 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F18E2B391DB0BBE1002EE679 /* CoreFoundation.framework */; };
+		F18E2B3C1DB0BBE6002EE679 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F18E2B3B1DB0BBE6002EE679 /* AudioToolbox.framework */; };
+		F18E2B3E1DB0BBEC002EE679 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F18E2B3D1DB0BBEC002EE679 /* CoreTelephony.framework */; };
+		F18E2B401DB0BBF1002EE679 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F18E2B3F1DB0BBF1002EE679 /* MobileCoreServices.framework */; };
+		F18E2B421DB0BC1F002EE679 /* liblibNavigator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F18E2B411DB0BC1F002EE679 /* liblibNavigator.a */; };
+		F18E2B441DB0BC25002EE679 /* liblibNativeUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F18E2B431DB0BC25002EE679 /* liblibNativeUI.a */; };
+		F18E2B461DB0BC33002EE679 /* libcoreSupport.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F18E2B451DB0BC33002EE679 /* libcoreSupport.a */; };
+		F18E2B481DB0BC45002EE679 /* liblibPDRCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F18E2B471DB0BC45002EE679 /* liblibPDRCore.a */; };
+		F18E2B4A1DB0BE73002EE679 /* liblibUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F18E2B491DB0BE73002EE679 /* liblibUI.a */; };
+		F18E2B4C1DB0BEE8002EE679 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F18E2B4B1DB0BEE8002EE679 /* AVFoundation.framework */; };
+		F18E2B4E1DB0BEFB002EE679 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F18E2B4D1DB0BEFB002EE679 /* WebKit.framework */; };
+		F18E2B501DB0BF06002EE679 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F18E2B4F1DB0BF06002EE679 /* AddressBook.framework */; };
+		F18E2B521DB0BF18002EE679 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F18E2B511DB0BF18002EE679 /* CoreLocation.framework */; };
+		F18E2B541DB0BF39002EE679 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F18E2B531DB0BF39002EE679 /* AssetsLibrary.framework */; };
+		F18E2B561DB0C663002EE679 /* control.xml in Resources */ = {isa = PBXBuildFile; fileRef = F18E2B551DB0C663002EE679 /* control.xml */; };
+		F18E2B581DB0C733002EE679 /* PandoraApi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F18E2B571DB0C733002EE679 /* PandoraApi.bundle */; };
+		F18E2B5A1DB0D4CD002EE679 /* liblibPGInvocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F18E2B591DB0D4CD002EE679 /* liblibPGInvocation.a */; };
+		F18E2B601DB0D60E002EE679 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = F18E2B5D1DB0D60E002EE679 /* AsyncSocket.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		F18E2B611DB0D60E002EE679 /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = F18E2B5F1DB0D60E002EE679 /* AsyncUdpSocket.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F18E2AEE1DB0B770002EE679 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F18E2ACC1DB0B770002EE679 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F18E2AD31DB0B770002EE679;
+			remoteInfo = SmartHouse;
+		};
+		F18E2AF91DB0B770002EE679 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F18E2ACC1DB0B770002EE679 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F18E2AD31DB0B770002EE679;
+			remoteInfo = SmartHouse;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F18E2AD41DB0B770002EE679 /* SmartHouse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartHouse.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F18E2AD81DB0B770002EE679 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F18E2ADA1DB0B770002EE679 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F18E2ADB1DB0B770002EE679 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F18E2ADD1DB0B770002EE679 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F18E2ADE1DB0B770002EE679 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F18E2AE11DB0B770002EE679 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F18E2AE31DB0B770002EE679 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F18E2AE61DB0B770002EE679 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F18E2AE81DB0B770002EE679 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F18E2AED1DB0B770002EE679 /* SmartHouseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartHouseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F18E2AF11DB0B770002EE679 /* SmartHouseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmartHouseTests.m; sourceTree = "<group>"; };
+		F18E2AF31DB0B770002EE679 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F18E2AF81DB0B770002EE679 /* SmartHouseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartHouseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F18E2AFC1DB0B770002EE679 /* SmartHouseUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmartHouseUITests.m; sourceTree = "<group>"; };
+		F18E2AFE1DB0B770002EE679 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F18E2B0E1DB0B8DB002EE679 /* PDRCommonString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDRCommonString.h; sourceTree = "<group>"; };
+		F18E2B0F1DB0B8DB002EE679 /* PDRCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDRCore.h; sourceTree = "<group>"; };
+		F18E2B101DB0B8DB002EE679 /* PDRCoreApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDRCoreApp.h; sourceTree = "<group>"; };
+		F18E2B111DB0B8DB002EE679 /* PDRCoreAppFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDRCoreAppFrame.h; sourceTree = "<group>"; };
+		F18E2B121DB0B8DB002EE679 /* PDRCoreAppInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDRCoreAppInfo.h; sourceTree = "<group>"; };
+		F18E2B131DB0B8DB002EE679 /* PDRCoreAppManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDRCoreAppManager.h; sourceTree = "<group>"; };
+		F18E2B141DB0B8DB002EE679 /* PDRCoreAppWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDRCoreAppWindow.h; sourceTree = "<group>"; };
+		F18E2B151DB0B8DB002EE679 /* PDRCoreDefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDRCoreDefs.h; sourceTree = "<group>"; };
+		F18E2B161DB0B8DB002EE679 /* PDRCoreSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDRCoreSettings.h; sourceTree = "<group>"; };
+		F18E2B171DB0B8DB002EE679 /* PDRCoreWindowManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDRCoreWindowManager.h; sourceTree = "<group>"; };
+		F18E2B191DB0B8DB002EE679 /* PDRNView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDRNView.h; sourceTree = "<group>"; };
+		F18E2B1A1DB0B8DB002EE679 /* PGMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGMethod.h; sourceTree = "<group>"; };
+		F18E2B1B1DB0B8DB002EE679 /* PGObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGObject.h; sourceTree = "<group>"; };
+		F18E2B1C1DB0B8DB002EE679 /* PGPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGPlugin.h; sourceTree = "<group>"; };
+		F18E2B1E1DB0B8DB002EE679 /* PDRToolSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDRToolSystem.h; sourceTree = "<group>"; };
+		F18E2B1F1DB0B8DB002EE679 /* PDRToolSystemEx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDRToolSystemEx.h; sourceTree = "<group>"; };
+		F18E2B201DB0B988002EE679 /* Pandora */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Pandora; sourceTree = "<group>"; };
+		F18E2B231DB0BB91002EE679 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		F18E2B251DB0BB9A002EE679 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		F18E2B271DB0BBA0002EE679 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		F18E2B291DB0BBB2002EE679 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		F18E2B2B1DB0BBB7002EE679 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F18E2B2D1DB0BBBD002EE679 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F18E2B2F1DB0BBC1002EE679 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		F18E2B311DB0BBC8002EE679 /* CoreAudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudioKit.framework; path = System/Library/Frameworks/CoreAudioKit.framework; sourceTree = SDKROOT; };
+		F18E2B331DB0BBCE002EE679 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		F18E2B351DB0BBD5002EE679 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		F18E2B371DB0BBDA002EE679 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		F18E2B391DB0BBE1002EE679 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		F18E2B3B1DB0BBE6002EE679 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		F18E2B3D1DB0BBEC002EE679 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		F18E2B3F1DB0BBF1002EE679 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		F18E2B411DB0BC1F002EE679 /* liblibNavigator.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = liblibNavigator.a; sourceTree = "<group>"; };
+		F18E2B431DB0BC25002EE679 /* liblibNativeUI.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = liblibNativeUI.a; sourceTree = "<group>"; };
+		F18E2B451DB0BC33002EE679 /* libcoreSupport.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcoreSupport.a; sourceTree = "<group>"; };
+		F18E2B471DB0BC45002EE679 /* liblibPDRCore.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = liblibPDRCore.a; sourceTree = "<group>"; };
+		F18E2B491DB0BE73002EE679 /* liblibUI.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = liblibUI.a; sourceTree = "<group>"; };
+		F18E2B4B1DB0BEE8002EE679 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		F18E2B4D1DB0BEFB002EE679 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		F18E2B4F1DB0BF06002EE679 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		F18E2B511DB0BF18002EE679 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		F18E2B531DB0BF39002EE679 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		F18E2B551DB0C663002EE679 /* control.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = control.xml; sourceTree = "<group>"; };
+		F18E2B571DB0C733002EE679 /* PandoraApi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PandoraApi.bundle; sourceTree = "<group>"; };
+		F18E2B591DB0D4CD002EE679 /* liblibPGInvocation.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = liblibPGInvocation.a; sourceTree = "<group>"; };
+		F18E2B5C1DB0D60E002EE679 /* AsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncSocket.h; sourceTree = "<group>"; };
+		F18E2B5D1DB0D60E002EE679 /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncSocket.m; sourceTree = "<group>"; };
+		F18E2B5E1DB0D60E002EE679 /* AsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncUdpSocket.h; sourceTree = "<group>"; };
+		F18E2B5F1DB0D60E002EE679 /* AsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncUdpSocket.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F18E2AD11DB0B770002EE679 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F18E2B541DB0BF39002EE679 /* AssetsLibrary.framework in Frameworks */,
+				F18E2B521DB0BF18002EE679 /* CoreLocation.framework in Frameworks */,
+				F18E2B501DB0BF06002EE679 /* AddressBook.framework in Frameworks */,
+				F18E2B4E1DB0BEFB002EE679 /* WebKit.framework in Frameworks */,
+				F18E2B4C1DB0BEE8002EE679 /* AVFoundation.framework in Frameworks */,
+				F18E2B401DB0BBF1002EE679 /* MobileCoreServices.framework in Frameworks */,
+				F18E2B4A1DB0BE73002EE679 /* liblibUI.a in Frameworks */,
+				F18E2B3E1DB0BBEC002EE679 /* CoreTelephony.framework in Frameworks */,
+				F18E2B3C1DB0BBE6002EE679 /* AudioToolbox.framework in Frameworks */,
+				F18E2B3A1DB0BBE1002EE679 /* CoreFoundation.framework in Frameworks */,
+				F18E2B461DB0BC33002EE679 /* libcoreSupport.a in Frameworks */,
+				F18E2B381DB0BBDA002EE679 /* MediaPlayer.framework in Frameworks */,
+				F18E2B361DB0BBD5002EE679 /* CoreMedia.framework in Frameworks */,
+				F18E2B341DB0BBCE002EE679 /* CoreAudio.framework in Frameworks */,
+				F18E2B321DB0BBC8002EE679 /* CoreAudioKit.framework in Frameworks */,
+				F18E2B301DB0BBC1002EE679 /* CFNetwork.framework in Frameworks */,
+				F18E2B5A1DB0D4CD002EE679 /* liblibPGInvocation.a in Frameworks */,
+				F18E2B421DB0BC1F002EE679 /* liblibNavigator.a in Frameworks */,
+				F18E2B2E1DB0BBBD002EE679 /* Foundation.framework in Frameworks */,
+				F18E2B441DB0BC25002EE679 /* liblibNativeUI.a in Frameworks */,
+				F18E2B2C1DB0BBB7002EE679 /* UIKit.framework in Frameworks */,
+				F18E2B2A1DB0BBB2002EE679 /* SystemConfiguration.framework in Frameworks */,
+				F18E2B281DB0BBA0002EE679 /* libz.tbd in Frameworks */,
+				F18E2B261DB0BB9A002EE679 /* libxml2.tbd in Frameworks */,
+				F18E2B241DB0BB91002EE679 /* libstdc++.tbd in Frameworks */,
+				F18E2B481DB0BC45002EE679 /* liblibPDRCore.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F18E2AEA1DB0B770002EE679 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F18E2AF51DB0B770002EE679 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F18E2ACB1DB0B770002EE679 = {
+			isa = PBXGroup;
+			children = (
+				F18E2AD61DB0B770002EE679 /* SmartHouse */,
+				F18E2AF01DB0B770002EE679 /* SmartHouseTests */,
+				F18E2AFB1DB0B770002EE679 /* SmartHouseUITests */,
+				F18E2AD51DB0B770002EE679 /* Products */,
+				F18E2B221DB0BB91002EE679 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F18E2AD51DB0B770002EE679 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F18E2AD41DB0B770002EE679 /* SmartHouse.app */,
+				F18E2AED1DB0B770002EE679 /* SmartHouseTests.xctest */,
+				F18E2AF81DB0B770002EE679 /* SmartHouseUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F18E2AD61DB0B770002EE679 /* SmartHouse */ = {
+			isa = PBXGroup;
+			children = (
+				F18E2B201DB0B988002EE679 /* Pandora */,
+				F18E2B0A1DB0B77C002EE679 /* Frameworks */,
+				F18E2ADD1DB0B770002EE679 /* ViewController.h */,
+				F18E2ADE1DB0B770002EE679 /* ViewController.m */,
+				F18E2AE01DB0B770002EE679 /* Main.storyboard */,
+				F18E2AE31DB0B770002EE679 /* Assets.xcassets */,
+				F18E2AE51DB0B770002EE679 /* LaunchScreen.storyboard */,
+				F18E2AE81DB0B770002EE679 /* Info.plist */,
+				F18E2AD71DB0B770002EE679 /* Supporting Files */,
+			);
+			path = SmartHouse;
+			sourceTree = "<group>";
+		};
+		F18E2AD71DB0B770002EE679 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F18E2ADA1DB0B770002EE679 /* AppDelegate.h */,
+				F18E2ADB1DB0B770002EE679 /* AppDelegate.m */,
+				F18E2AD81DB0B770002EE679 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F18E2AF01DB0B770002EE679 /* SmartHouseTests */ = {
+			isa = PBXGroup;
+			children = (
+				F18E2AF11DB0B770002EE679 /* SmartHouseTests.m */,
+				F18E2AF31DB0B770002EE679 /* Info.plist */,
+			);
+			path = SmartHouseTests;
+			sourceTree = "<group>";
+		};
+		F18E2AFB1DB0B770002EE679 /* SmartHouseUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F18E2AFC1DB0B770002EE679 /* SmartHouseUITests.m */,
+				F18E2AFE1DB0B770002EE679 /* Info.plist */,
+			);
+			path = SmartHouseUITests;
+			sourceTree = "<group>";
+		};
+		F18E2B0A1DB0B77C002EE679 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F18E2B5B1DB0D5FD002EE679 /* AsyncSocket */,
+				F18E2B0B1DB0B784002EE679 /* h5+ */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F18E2B0B1DB0B784002EE679 /* h5+ */ = {
+			isa = PBXGroup;
+			children = (
+				F18E2B551DB0C663002EE679 /* control.xml */,
+				F18E2B491DB0BE73002EE679 /* liblibUI.a */,
+				F18E2B591DB0D4CD002EE679 /* liblibPGInvocation.a */,
+				F18E2B471DB0BC45002EE679 /* liblibPDRCore.a */,
+				F18E2B451DB0BC33002EE679 /* libcoreSupport.a */,
+				F18E2B431DB0BC25002EE679 /* liblibNativeUI.a */,
+				F18E2B411DB0BC1F002EE679 /* liblibNavigator.a */,
+				F18E2B571DB0C733002EE679 /* PandoraApi.bundle */,
+				F18E2B0C1DB0B8DB002EE679 /* inc */,
+			);
+			name = "h5+";
+			sourceTree = "<group>";
+		};
+		F18E2B0C1DB0B8DB002EE679 /* inc */ = {
+			isa = PBXGroup;
+			children = (
+				F18E2B0D1DB0B8DB002EE679 /* core */,
+				F18E2B181DB0B8DB002EE679 /* Feature */,
+				F18E2B1D1DB0B8DB002EE679 /* tools */,
+			);
+			path = inc;
+			sourceTree = "<group>";
+		};
+		F18E2B0D1DB0B8DB002EE679 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				F18E2B0E1DB0B8DB002EE679 /* PDRCommonString.h */,
+				F18E2B0F1DB0B8DB002EE679 /* PDRCore.h */,
+				F18E2B101DB0B8DB002EE679 /* PDRCoreApp.h */,
+				F18E2B111DB0B8DB002EE679 /* PDRCoreAppFrame.h */,
+				F18E2B121DB0B8DB002EE679 /* PDRCoreAppInfo.h */,
+				F18E2B131DB0B8DB002EE679 /* PDRCoreAppManager.h */,
+				F18E2B141DB0B8DB002EE679 /* PDRCoreAppWindow.h */,
+				F18E2B151DB0B8DB002EE679 /* PDRCoreDefs.h */,
+				F18E2B161DB0B8DB002EE679 /* PDRCoreSettings.h */,
+				F18E2B171DB0B8DB002EE679 /* PDRCoreWindowManager.h */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
+		F18E2B181DB0B8DB002EE679 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				F18E2B191DB0B8DB002EE679 /* PDRNView.h */,
+				F18E2B1A1DB0B8DB002EE679 /* PGMethod.h */,
+				F18E2B1B1DB0B8DB002EE679 /* PGObject.h */,
+				F18E2B1C1DB0B8DB002EE679 /* PGPlugin.h */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		F18E2B1D1DB0B8DB002EE679 /* tools */ = {
+			isa = PBXGroup;
+			children = (
+				F18E2B1E1DB0B8DB002EE679 /* PDRToolSystem.h */,
+				F18E2B1F1DB0B8DB002EE679 /* PDRToolSystemEx.h */,
+			);
+			path = tools;
+			sourceTree = "<group>";
+		};
+		F18E2B221DB0BB91002EE679 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F18E2B531DB0BF39002EE679 /* AssetsLibrary.framework */,
+				F18E2B511DB0BF18002EE679 /* CoreLocation.framework */,
+				F18E2B4F1DB0BF06002EE679 /* AddressBook.framework */,
+				F18E2B4D1DB0BEFB002EE679 /* WebKit.framework */,
+				F18E2B4B1DB0BEE8002EE679 /* AVFoundation.framework */,
+				F18E2B3F1DB0BBF1002EE679 /* MobileCoreServices.framework */,
+				F18E2B3D1DB0BBEC002EE679 /* CoreTelephony.framework */,
+				F18E2B3B1DB0BBE6002EE679 /* AudioToolbox.framework */,
+				F18E2B391DB0BBE1002EE679 /* CoreFoundation.framework */,
+				F18E2B371DB0BBDA002EE679 /* MediaPlayer.framework */,
+				F18E2B351DB0BBD5002EE679 /* CoreMedia.framework */,
+				F18E2B331DB0BBCE002EE679 /* CoreAudio.framework */,
+				F18E2B311DB0BBC8002EE679 /* CoreAudioKit.framework */,
+				F18E2B2F1DB0BBC1002EE679 /* CFNetwork.framework */,
+				F18E2B2D1DB0BBBD002EE679 /* Foundation.framework */,
+				F18E2B2B1DB0BBB7002EE679 /* UIKit.framework */,
+				F18E2B291DB0BBB2002EE679 /* SystemConfiguration.framework */,
+				F18E2B271DB0BBA0002EE679 /* libz.tbd */,
+				F18E2B251DB0BB9A002EE679 /* libxml2.tbd */,
+				F18E2B231DB0BB91002EE679 /* libstdc++.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F18E2B5B1DB0D5FD002EE679 /* AsyncSocket */ = {
+			isa = PBXGroup;
+			children = (
+				F18E2B5C1DB0D60E002EE679 /* AsyncSocket.h */,
+				F18E2B5D1DB0D60E002EE679 /* AsyncSocket.m */,
+				F18E2B5E1DB0D60E002EE679 /* AsyncUdpSocket.h */,
+				F18E2B5F1DB0D60E002EE679 /* AsyncUdpSocket.m */,
+			);
+			name = AsyncSocket;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F18E2AD31DB0B770002EE679 /* SmartHouse */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F18E2B011DB0B770002EE679 /* Build configuration list for PBXNativeTarget "SmartHouse" */;
+			buildPhases = (
+				F18E2AD01DB0B770002EE679 /* Sources */,
+				F18E2AD11DB0B770002EE679 /* Frameworks */,
+				F18E2AD21DB0B770002EE679 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SmartHouse;
+			productName = SmartHouse;
+			productReference = F18E2AD41DB0B770002EE679 /* SmartHouse.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F18E2AEC1DB0B770002EE679 /* SmartHouseTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F18E2B041DB0B770002EE679 /* Build configuration list for PBXNativeTarget "SmartHouseTests" */;
+			buildPhases = (
+				F18E2AE91DB0B770002EE679 /* Sources */,
+				F18E2AEA1DB0B770002EE679 /* Frameworks */,
+				F18E2AEB1DB0B770002EE679 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F18E2AEF1DB0B770002EE679 /* PBXTargetDependency */,
+			);
+			name = SmartHouseTests;
+			productName = SmartHouseTests;
+			productReference = F18E2AED1DB0B770002EE679 /* SmartHouseTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F18E2AF71DB0B770002EE679 /* SmartHouseUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F18E2B071DB0B770002EE679 /* Build configuration list for PBXNativeTarget "SmartHouseUITests" */;
+			buildPhases = (
+				F18E2AF41DB0B770002EE679 /* Sources */,
+				F18E2AF51DB0B770002EE679 /* Frameworks */,
+				F18E2AF61DB0B770002EE679 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F18E2AFA1DB0B770002EE679 /* PBXTargetDependency */,
+			);
+			name = SmartHouseUITests;
+			productName = SmartHouseUITests;
+			productReference = F18E2AF81DB0B770002EE679 /* SmartHouseUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F18E2ACC1DB0B770002EE679 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "曾祺植";
+				TargetAttributes = {
+					F18E2AD31DB0B770002EE679 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = WQV3X2X47U;
+						ProvisioningStyle = Automatic;
+					};
+					F18E2AEC1DB0B770002EE679 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = T2F96577GJ;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F18E2AD31DB0B770002EE679;
+					};
+					F18E2AF71DB0B770002EE679 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = T2F96577GJ;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F18E2AD31DB0B770002EE679;
+					};
+				};
+			};
+			buildConfigurationList = F18E2ACF1DB0B770002EE679 /* Build configuration list for PBXProject "SmartHouse" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F18E2ACB1DB0B770002EE679;
+			productRefGroup = F18E2AD51DB0B770002EE679 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F18E2AD31DB0B770002EE679 /* SmartHouse */,
+				F18E2AEC1DB0B770002EE679 /* SmartHouseTests */,
+				F18E2AF71DB0B770002EE679 /* SmartHouseUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F18E2AD21DB0B770002EE679 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F18E2B581DB0C733002EE679 /* PandoraApi.bundle in Resources */,
+				F18E2B211DB0B988002EE679 /* Pandora in Resources */,
+				F18E2AE71DB0B770002EE679 /* LaunchScreen.storyboard in Resources */,
+				F18E2B561DB0C663002EE679 /* control.xml in Resources */,
+				F18E2AE41DB0B770002EE679 /* Assets.xcassets in Resources */,
+				F18E2AE21DB0B770002EE679 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F18E2AEB1DB0B770002EE679 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F18E2AF61DB0B770002EE679 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F18E2AD01DB0B770002EE679 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F18E2ADF1DB0B770002EE679 /* ViewController.m in Sources */,
+				F18E2B611DB0D60E002EE679 /* AsyncUdpSocket.m in Sources */,
+				F18E2ADC1DB0B770002EE679 /* AppDelegate.m in Sources */,
+				F18E2AD91DB0B770002EE679 /* main.m in Sources */,
+				F18E2B601DB0D60E002EE679 /* AsyncSocket.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F18E2AE91DB0B770002EE679 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F18E2AF21DB0B770002EE679 /* SmartHouseTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F18E2AF41DB0B770002EE679 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F18E2AFD1DB0B770002EE679 /* SmartHouseUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F18E2AEF1DB0B770002EE679 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F18E2AD31DB0B770002EE679 /* SmartHouse */;
+			targetProxy = F18E2AEE1DB0B770002EE679 /* PBXContainerItemProxy */;
+		};
+		F18E2AFA1DB0B770002EE679 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F18E2AD31DB0B770002EE679 /* SmartHouse */;
+			targetProxy = F18E2AF91DB0B770002EE679 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F18E2AE01DB0B770002EE679 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F18E2AE11DB0B770002EE679 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F18E2AE51DB0B770002EE679 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F18E2AE61DB0B770002EE679 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F18E2AFF1DB0B770002EE679 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-llibNavigator",
+					"-ObjC",
+					"-lcoreSupport",
+					"-llibNativeUI",
+					"-llibPDRCore",
+					"-llibUI",
+					"-llibPGInvocation",
+				);
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F18E2B001DB0B770002EE679 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = (
+					"-llibNavigator",
+					"-ObjC",
+					"-lcoreSupport",
+					"-llibNativeUI",
+					"-llibPDRCore",
+					"-llibUI",
+					"-llibPGInvocation",
+				);
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F18E2B021DB0B770002EE679 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = WQV3X2X47U;
+				INFOPLIST_FILE = SmartHouse/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SmartHouse",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = in.lijian;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+			};
+			name = Debug;
+		};
+		F18E2B031DB0B770002EE679 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Sichuan Yiergen Technology Inc. (BA8V7ALAFS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = WQV3X2X47U;
+				INFOPLIST_FILE = SmartHouse/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SmartHouse",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = in.lijian;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+			};
+			name = Release;
+		};
+		F18E2B051DB0B770002EE679 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = T2F96577GJ;
+				INFOPLIST_FILE = SmartHouseTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.scujccZQZ.SmartHouseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmartHouse.app/SmartHouse";
+			};
+			name = Debug;
+		};
+		F18E2B061DB0B770002EE679 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = T2F96577GJ;
+				INFOPLIST_FILE = SmartHouseTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.scujccZQZ.SmartHouseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmartHouse.app/SmartHouse";
+			};
+			name = Release;
+		};
+		F18E2B081DB0B770002EE679 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = T2F96577GJ;
+				INFOPLIST_FILE = SmartHouseUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.scujccZQZ.SmartHouseUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SmartHouse;
+			};
+			name = Debug;
+		};
+		F18E2B091DB0B770002EE679 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = T2F96577GJ;
+				INFOPLIST_FILE = SmartHouseUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.scujccZQZ.SmartHouseUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SmartHouse;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F18E2ACF1DB0B770002EE679 /* Build configuration list for PBXProject "SmartHouse" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F18E2AFF1DB0B770002EE679 /* Debug */,
+				F18E2B001DB0B770002EE679 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F18E2B011DB0B770002EE679 /* Build configuration list for PBXNativeTarget "SmartHouse" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F18E2B021DB0B770002EE679 /* Debug */,
+				F18E2B031DB0B770002EE679 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F18E2B041DB0B770002EE679 /* Build configuration list for PBXNativeTarget "SmartHouseTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F18E2B051DB0B770002EE679 /* Debug */,
+				F18E2B061DB0B770002EE679 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F18E2B071DB0B770002EE679 /* Build configuration list for PBXNativeTarget "SmartHouseUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F18E2B081DB0B770002EE679 /* Debug */,
+				F18E2B091DB0B770002EE679 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F18E2ACC1DB0B770002EE679 /* Project object */;
+}

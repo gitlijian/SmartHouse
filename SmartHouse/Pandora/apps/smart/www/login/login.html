@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html class="ui-page-login">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="../css/style.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/login.css" />
+		<style>
+			.area {
+				margin: 20px auto 0px auto;
+			}
+			
+			.mui-input-group {
+				margin-top: 10px;
+			}
+			
+			.mui-input-group:first-child {
+				margin-top: 20px;
+			}
+			
+			.mui-input-group label {
+				width: 22%;
+			}
+			
+			.mui-input-row label~input,
+			.mui-input-row label~select,
+			.mui-input-row label~textarea {
+				width: 78%;
+			}
+			
+			.mui-checkbox input[type=checkbox],
+			.mui-radio input[type=radio] {
+				top: 6px;
+			}
+			
+			.mui-content-padded {
+				margin-top: 25px;
+			}
+			
+			.link-area {
+				display: block;
+				margin-top: 25px;
+				text-align: center;
+			}
+			
+			.spliter {
+				color: #bbb;
+				padding: 0px 8px;
+			}
+			
+			.oauth-area {
+				position: absolute;
+				bottom: 20px;
+				left: 0px;
+				text-align: center;
+				width: 100%;
+				padding: 0px;
+				margin: 0px;
+			}
+			
+			.oauth-area .oauth-btn {
+				display: inline-block;
+				width: 50px;
+				height: 50px;
+				background-size: 30px 30px;
+				background-position: center center;
+				background-repeat: no-repeat;
+				margin: 0px 20px;
+				/*-webkit-filter: grayscale(100%); */
+				border: solid 1px #ddd;
+				border-radius: 25px;
+			}
+			
+			.oauth-area .oauth-btn:active {
+				border: solid 1px #aaa;
+			}
+			
+			.oauth-area .oauth-btn.disabled {
+				background-color: #ddd;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="logina mui-content">
+			<center>
+			<div class="applogo"><img src="../img/main icon/mainicon1.png"></ing></div>
+			<form id='login-form' class="mui-input-group">
+				<div class="login mui-input-row">
+					<label><img class="loginicon" src="../img/username.png"></label>
+					<input id='account' type="text" class="mui-input-clear mui-input" placeholder="请输入账号">
+				</div>
+				<div class="login mui-input-row">
+					<label><img class="loginicon" src="../img/password.png"></label>
+					<input id='password' type="password" class="mui-input-clear mui-input" placeholder="请输入密码">
+				</div>
+				
+			</form>
+		
+			<div class="mui-content-padded">
+				<button id='login' class="loginbtn mui-btn mui-btn-block mui-btn-primary">登录</button>
+			</div>
+			
+			<div class="mui-content-padded oauth-area">
+
+			</div>
+			</center>
+		</div>
+
+
+<script src="../js/mui.min.js"></script>
+<script src="../js/mui.enterfocus.js"></script>
+<script src="../js/app.js"></script>
+<script src="../js/md5.js"></script>
+<script src="../js/service.js"></script>
+<script src="../js/tools.js"></script>
+<script>
+
+//本区域用来方式初始化的变量
+//初始化变量************begin**************************************
+var loginButton = document.getElementById('login');
+var accountBox = document.getElementById('account');
+var passwordBox = document.getElementById('password');
+var settings = app.getSettings();
+var state = app.getState();
+var tag = 0;
+//初始化变量************end*****************************************
+
+
+mui.init({
+	statusBarBackground: '#f7f7f7'
+});
+
+//页面加载完成后执行
+mui.plusReady(function() {
+	var settings = app.getSettings();
+	var state = app.getState();
+	
+	//安卓返回键设定
+	tools.goBack();
+	if(tag = 0){
+		
+	}
+	//预加载
+	if(settings.userid != null&& settings.password != null)
+	{
+		accountBox.value = settings.userid;
+		passwordBox.value = settings.password;
+		if(settings.autoLogin)
+			//发送登录请求
+			OnLoginButton();	
+	}	
+});	
+
+//本区域用来编辑控件的响应时间****************************************
+//控件绑定响应事件************begin**********************************
+
+//登录按钮绑定点击事件
+loginButton.addEventListener('tap', function(event) {
+	//toMain();
+	if (accountBox.value.length == 0)
+		plus.nativeUI.toast("请输入账号");
+	else if (passwordBox.value.length == 0)
+		plus.nativeUI.toast("请输入密码");
+	else
+		OnLoginButton();
+});
+
+//点击登录
+function OnLoginButton() {
+	//alert("点击登录事件");
+	document.activeElement.blur();//关闭键盘 
+	var loginInfo = {
+		reqKey: "SmartHouse_login",
+		input: {
+			name: accountBox.value,
+			password: passwordBox.value
+		}
+	};
+
+	//console.log(JSON.stringify(loginInfo))
+	service.OnDoPostServerJson(loginInfo, true, true, function(jsonData) {
+		if (jsonData.result == 0) {
+			//alert("数据接收成功");
+			localStorage.setItem("UserID", jsonData["ansData"][0]["UserID"]);
+			tag = 1;
+			//设置为默认自动登录
+			if(!settings.autoLogin)
+			{
+				settings.autoLogin = true;
+			}
+			if (settings.autoLogin) //是自动登录
+			{
+				settings.autoLogin = true;
+				settings.userid = accountBox.value;
+				settings.password = passwordBox.value;
+				app.setSettings(settings);
+			}
+			//alert(localStorage.getItem("UserID"));
+			toMain();	
+			}else{
+				alert(jsonData.result);
+			}
+		});
+}
+
+//设置焦点焦点
+mui.enterfocus('#login-form input', function() {
+	mui.trigger(loginButton, 'tap');
+});
+
+//控件绑定事件响应************end************************************
+
+
+
+//一下区域用来书本页公用写函数
+//方法************begin**********************************
+
+//跳转到主页
+function toMain() {
+	//alert("跳到主页");
+	var webview_style = {
+		popGesture : "none"
+	};
+	mui.openWindow({
+		id: '../telecontrol/headerAndFooter.html',
+		url: "../telecontrol/headerAndFooter.html",
+		styles: webview_style,
+		show: {
+			aniShow: 'pop-in'
+		},
+		waiting: {
+			autoShow: false
+		}
+	});
+};
+//方法************end************************************
+
+</script>
+</body>
+</html>

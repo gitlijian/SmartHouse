@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>group</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="../css/app.css"/>
+		<style>
+			body{
+				font-family: "微软雅黑";
+			}
+			.mui-switch.mui-active{
+				border-color:#7FB2F1;
+				background-color:#7FB2F1;
+			}
+			.mui-card{
+				margin-top: 1em;
+			}
+			.mui-table-view-cell>.mui-badge, .mui-table-view-cell>.mui-btn, .mui-table-view-cell>.mui-switch, .mui-table-view-cell>a>.mui-badge, .mui-table-view-cell>a>.mui-btn, .mui-table-view-cell>a>.mui-switch{
+				top: 2em;
+			}
+			
+			h5{
+				font-size: 1em;
+			}
+			h6{
+				padding-top: 0.3em;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="mui-content" id="allVedio">
+		
+		<!--查看客厅vedio begin-->
+		
+			<!--<div id="living_room_vedio" class=" vedio_bar living_room">
+							<span class="place">客厅</span>
+						<div id="vedio_play_btn" class="play_btn">
+							<img src="../img/play_btn.png" />
+						</div>
+			 </div>	-->		
+           
+					
+			
+		
+		<!--查看客厅vedio end-->
+		
+		
+			<!--<div id="living_room_vedio" class=" vedio_bar bedroom">
+				<span class="place">卧室</span>
+				<div id="vedio_play_btn" class="play_btn">
+					<img src="../img/play_btn.png" />
+				</div>
+            </div>-->
+		
+		
+		
+			<!--<div id="balcony_vedio" class=" vedio_bar balcony">
+				<span class="place">阳台</span>
+				<div id="vedio_play_btn" class="play_btn">
+					<img src="../img/play_btn.png" />
+				</div>
+            </div>-->
+		</div>
+	</body>
+	<script src="../js/mui.min.js"></script>
+	<script src="../js/service.js"></script>
+	<script>
+		mui.init({
+			swipeBack:false //启用右滑关闭功能
+		});
+		
+		var videoName;
+		var videoPas;
+		var videoSN;
+		var getData = function(){
+			var getContacts = { 
+		        reqKey: "SmartHouse_getVideoList",
+		        input:{
+			        UserID:localStorage.getItem("UserID")
+			    }
+		    };
+		    console.log(JSON.stringify(getContacts));
+	        service.OnDoPostServerJson(getContacts, false, false, function(jsonData){//jsonData即返回的json数据 并且为json格式
+			    if (jsonData.result == 0){
+				    //alert("数据接收成功");
+	  				if(jsonData["ansData"]){
+		  				dealData(jsonData["ansData"]);
+	  				}
+	  			} else {
+					plus.nativeUI.toast(jsonData.result);
+				}
+			}); 
+		};
+			
+		function dealData(data){
+			//alert("开始列图标哟");
+			for(var i = 0; i < data.length; i++){
+				document.getElementById("allVedio").innerHTML+='<div videoPas="'+ data[i].videoPas + '"' 
+				        +' videoSN="'+ data[i].videoSN +'" videoName="'+ data[i].videoName +'" class=" vedio_bar living_room">'
+		                +'<span class="place">'+ data[i].cameraName+'</span>'
+		                +'<div id="vedio_play_btn" class="play_btn">'
+		                +'<img src="../img/play_btn.png" /></div>'
+		                +'</div>'
+										
+			}
+		}
+		function assignment(){
+			// videoName = this.getAttribute("videoName");
+			// videoPas = this.getAttribute("videoPas");
+			// videoSN = this.getAttribute("videoSN");
+		}
+		mui.plusReady(function () {
+			//alert("加载完啦！");
+			getData();
+			assignment();
+		});
+	</script>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>group</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="../css/app.css"/>
+		<style>
+			.gray-icon{
+				zoom: 8%;
+			}
+			.gray-icon-all{
+				margin-top: 1.2em;
+				border-top: solid 1px gainsboro;
+				padding-top: 0.6em;
+			}
+			.mui-switch.mui-active{
+				border-color:#7FB2F1;
+				background-color:#7FB2F1;
+			}
+			.mui-card{
+				margin-top: 1em;
+			}
+			.mui-table-view-cell>.mui-badge, .mui-table-view-cell>.mui-btn, .mui-table-view-cell>.mui-switch, .mui-table-view-cell>a>.mui-badge, .mui-table-view-cell>a>.mui-btn, .mui-table-view-cell>a>.mui-switch{
+				top: 2em;
+			}
+			h5{
+				font-size: 1em;
+			}
+			h6{
+				padding-top: 0.3em;
+			}
+			.mui-btn.mui-btn-primary{
+				border-color:#7FB2F1;
+				background-color:#7FB2F1;
+				border-radius: 2em;
+				height: 2em;
+				width: 5em;
+				float: right;
+				top: -2.8em;
+			}
+			.mui-btn, button, input[type=button], input[type=reset], input[type=submit]{
+				line-height:0.5
+			}
+		</style>
+	</head>
+	<body>
+		<div class="mui-content" id="allMode">
+			<div class="mui-card">
+				<ul class="mui-table-view">
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script src="../js/mui.min.js"></script>
+	<script src="../js/service.js"></script>
+	<script src="../js/tools.js"></script>
+	<script type="text/javascript">
+	
+	// 定义变量
+	var funcCodes = {};
+	// 定义结束
+	
+	    var deleteBtn = document.getElementsByClassName('mui-btn mui-btn-red');
+		mui.init({
+			swipeBack:false //启用右滑关闭功能
+		});
+		
+		//绑定删除事件
+		var btnArray = ['确认', '取消'];
+		mui('#allMode').on('tap','.delCompose',function() {
+			var composeID = this.getAttribute("composeID");	
+			var elem = this;
+			var ul = elem.parentNode.parentNode;
+			var div = ul.parentNode.parentNode;
+				mui.confirm('确认删除该条记录？', 'smartHouse', btnArray, function(e) {
+				if (e.index == 0) {
+					OnDelectBtn(composeID);
+					//elem.parentNode.removeChild(elem);
+					div.parentNode.removeChild(div);
+				} else {
+					setTimeout(function() {
+						$.swipeoutClose(div);
+					}, 0);
+				}
+			});
+		});
+		
+		function OnDelectBtn(composeID){
+			var loginInfo = {
+		        reqKey: "SmartHouse_delCompose",
+		        input: {
+			        UserID: localStorage.getItem("UserID"),
+			        composeID: composeID
+		        }
+	        };
+
+	    console.log(JSON.stringify(loginInfo))
+	    service.OnDoPostServerJson(loginInfo, true, true, function(jsonData) {
+		    if (jsonData.result == 0) {
+		 	    alert("删除成功");
+		 	    
+			}else{
+				alert(jsonData.result);
+			}
+		    });
+		}
+
+		//**************移除接口***********
+		var getData = function(){//取得数据
+			var getContacts = { 
+		        reqKey: "SmartHouse_getcomposeList",
+		        input:{
+			        UserID:localStorage.getItem("UserID")
+			    }
+		    };
+		    console.log(JSON.stringify(getContacts));
+	        service.OnDoPostServerJson(getContacts, false, false, function(jsonData){//jsonData即返回的json数据 并且为json格式
+			    if (jsonData.result == 0){
+				    //alert("数据接收成功");
+	  				if(jsonData["ansData"]){
+		  				dealData(jsonData["ansData"]);
+	  				}
+	  			} else {
+					plus.nativeUI.toast(jsonData.result);
+				}
+			}); 
+		};
+			
+		function dealData(data){
+			//alert("开始列图标哟");
+			var am = document.getElementById("allMode");
+			am.innerHTML = "";
+			for(var i = 0; i < data.length; i++){
+				var codes = [];
+				document.getElementById("allMode").innerHTML+='<div class="mui-card">'
+				        +'<ul class="mui-table-view"><li class="mui-table-view-cell">'
+					    +'<div class="mui-slider-right mui-disabled">'
+						+'<a class="mui-btn mui-btn-red delCompose delCompose"  composeID="'+ data[i].composeID+'">删除</a></div>'
+						+'<div class="mui-slider-handle"><h5>'+data[i].composeName+'</h5><h6>自定义电器开关</h6>'
+						+'<button id="btn' + i + '" type="button" class="mui-btn mui-btn-primary">激活</button>'
+				        +'<div class="gray-icon-all" id="mode'+i+'">'
+				        +'</div></div></li></ul></div>'
+		        if(data[i].composedetail != null){
+		        	for(var j = 0; j < data[i].composedetail.length; j++){
+		        		//alert(j);
+		        	    document.getElementById("mode"+ i).innerHTML+='<span class="gray-icon"><img src="'+data[i].composedetail[j].deviceFunctionImg+'" /></span>';
+		        	    codes[j] = data[i].composedetail[j].funcitonCode;
+		            }
+		        	funcCodes["btn" + i] = codes;
+		        }
+		        // 还要为该按钮添加一个响应事件
+		        document.getElementById("btn" + i).addEventListener("click", function() {
+		        	// console.log(this.id);
+		        	var thisFuncCodes = funcCodes[this.id];
+		        	var sendData = {
+		        		ip : "112.124.42.42", 
+		        		port : "80", 
+		        		controllCode : ""
+		        	};
+		        	// console.log(thisFuncCodes.length);
+		        	for (var i = 0; i < thisFuncCodes.length; i++) {
+		        		sendData["controllCode"] = thisFuncCodes[i];
+		        		console.log(JSON.stringify(sendData));
+		        		var notiClass = plus.ios.importClass("NSNotificationCenter");
+            			notiClass.defaultCenter().postNotificationNameobject("PostControllCodes", JSON.stringify(data));
+		        	}
+		        });
+			}
+			
+			// console.log(JSON.stringify(funcCodes));
+//			composeID = this.getAttribute("composeID");
+		}
+		function refresh(){
+			document.getElementById('allMode').innerHTML = '';
+			getData();
+		}
+		mui.plusReady(function () {
+			//alert("加载完啦！");
+			getData();
+			//assignment();
+			window.addEventListener('RefreshData', function(event) {
+				refresh();
+			});
+		});
+
+	</script>
+</html>

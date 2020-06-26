@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>group_second</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="../css/app.css" />
+
+		<style>
+			.mui-switch.mui-active {
+				border-color: #7FB2F1;
+				background-color: #7FB2F1;
+			}
+			
+			.mui-checkbox input[type=checkbox]:checked:before,
+			.mui-radio input[type=radio]:checked:before {
+				color: #7FB2F1;
+			}
+	
+						
+			.nameForm .nameStyle{
+				height: 600px;
+			}
+			
+			.nameForm .nameStyle {
+				height: 600px;
+			}
+			.nameForm {
+				background-color: #fff;
+				height: 4em;
+				box-shadow: 0 3px 6px rgba(201, 201, 201, 0.2);
+				margin-bottom: 1.2em;
+				margin-top: 1em;
+				border-radius: 10px;
+			}
+			
+			.nameStyle {
+				padding-top: 15px;
+			}
+			.mui-input-group .mui-input-row{
+				height: 45px;
+			}
+			.mui-input-group .mui-input-row:after{
+				background-color: gainsboro;
+			}
+			.nameForm .nameStyle:after{
+				background-color: transparent;
+			}
+			.mui-input-group {
+				background-color: #fff;
+			}
+			.mui-input-row{
+				background-color: #fff;
+			}
+			.buy-bt {
+				float: right;
+				height: 3.5em;
+				width: 9em;
+				border: none;
+				background-color: #F14E41;
+				border-radius: 0px;
+				color: white;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" href="group_main.html"></a>
+			<h1 class="mui-title">编辑组合模式</h1>
+		</header>
+
+		<div class="mui-content">
+
+			<form class="mui-input-group nameForm">
+				<div class="mui-input-row nameStyle">
+					<label>名称</label>
+					<input type="text" id="inputBox" class="mui-input-clear" placeholder="请输入组合名称">
+				</div>
+
+			</form>
+			<form class="mui-input-group nameForm" id="allModeDevice">
+				<!--<div id="devices" class="mui-input-row mui-checkbox mui-left">'
+					<label style="width: 13em;">test</label>
+					<div id="OnOrOff11" class="mui-switch mui-active">
+						<div class="mui-switch-handle"></div>
+					</div>
+					<input name="checkbox" id="check22" type="checkbox">
+				</div>-->
+			</form>
+		</div>
+		<nav class="buttom-bar mui-bar mui-bar-tab ">
+			<button id="confirm" class="pay-btn buy-bt">确认</button>
+		</nav>
+	</body>
+	<script src="../js/mui.min.js"></script>
+	<script src="../js/service.js"></script>
+	<script>
+		mui.init({
+			swipeBack: false // 关闭右滑关闭功能
+		});
+		
+		var dataLength = 0;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+		var inputBox = document.getElementById('inputBox');
+		var confirmBtn = document.getElementById('confirm');
+		var OnListFuncID = {};
+		var OffListFuncID = {};
+		
+		
+		/**********************添加组合 begin**********************/	
+		
+		function OnConfirmBtn(){
+			//var jsonarray={}; //要添加的设备数据的数组
+			var deviceID="[]";
+			//var jsonstr="[{'name':'a','value':1},{'name':'b','value':2}]";
+            var jsonarray = eval('('+deviceID+')');
+			var deviceFunctionId;
+			var checkBox;
+			// alert(dataLength);
+			var allModeDevice = document.getElementById('allModeDevice');
+			// console.log("allModeDevice:   \n" + allModeDevice.innerHTML);
+			for(var x = 0; x < dataLength; x++){
+		        checkBox = document.getElementById("check"+x);
+		        //alert(document.getElementById("check"+x).checked);
+		        var myDevice = document.getElementById("device" + x);
+		        if(checkBox.checked){//判断checkBox是否被选中
+		        	
+		        	// console.log("device : \n" + myDevice.innerHTML);
+		        	deviceID = myDevice.getAttribute('deviceid');
+				    deviceFunctionId = document.getElementById('OnOrOff'+x).getAttribute('deviceFunctionId');// de.deviceFunctionId;
+				    console.log("deviceID: " + deviceID + "\ndeviceFunctionId: " + deviceFunctionId);
+				    var str ={
+					    "deviceID":deviceID,
+					    "deviceFunctionId":deviceFunctionId
+				    }
+				    jsonarray.push(str);
+			    }else x++;
+		    }
+				
+			var getContacts = { 
+		            reqKey: "SmartHouse_addcompose",
+		            input:{
+			            UserID:localStorage.getItem("UserID"),
+			            composeName:inputBox.value,
+			            devfuncIDs:jsonarray
+			        }
+		        };
+		       //  console.log(JSON.stringify(getContacts));
+	            service.OnDoPostServerJson(getContacts, false, false, function(jsonData){//jsonData即返回的json数据 并且为json格式
+			        if (jsonData.result == 0){
+				        // alert("添加成功！");
+				        plus.nativeUI.toast("添加成功");
+				        mui.back();
+//	  				    if(jsonData["ansData"]){
+//		  				    dealData(jsonData["ansData"]);
+//	  				    }
+	  			    } else {
+					    plus.nativeUI.toast(jsonData.result);
+				    }
+			    }); 
+			    
+		}
+		/**********************添加组合 begin**********************/
+		
+		/*****************动态加载可添加设备列表  begin*************/
+		var getData = function(){
+			var getContact = { 
+		        reqKey: "SmartHouse_getcomposeDeviceList",
+		        input:{
+			        UserID:localStorage.getItem("UserID")
+			    }
+		    };
+		    // console.log(JSON.stringify(getContact));
+	        service.OnDoPostServerJson(getContact, false, false, function(jsonData){//jsonData即返回的json数据 并且为json格式
+			    if (jsonData.result == 0){
+				    //alert("数据接收成功");
+	  				if(jsonData["ansData"]){
+	  					//alert()
+		  				dealData(jsonData["ansData"]);
+	  				}
+	  			} else {
+					plus.nativeUI.toast(jsonData.result);
+				}
+			}); 
+		};
+		
+		function dealData(data){
+			//alert("开始列图标哟");
+			var allModeDev = document.getElementById("allModeDevice");
+			allModeDev.innerHTML = "";
+			dataLength = 0;
+			for(var i = 0; i < data.length; i++){
+				//alert(i);
+				if(data[i].OnOffList != null){
+					if (data[i].OnOffList[0] != null) {
+						allModeDev.innerHTML+=
+							 '<div id="device'+ i + '" deviceid="' + data[i].deviceID+'" class="mui-input-row mui-checkbox mui-left">'
+					        +'<label style="width: 13em;">'+data[i].deviceName+'</label>'
+						    +'<input name="checkbox" id="check'+i+'" type="checkbox">'
+						    +'<div id="OnOrOff'+i+'" deviceFunctionId="'+data[i].OnOffList[0].deviceFunctionId +'" '
+						    +'deviceOnOrOff="'+data[i].OnOffList[0].deviceOnOrOff+'" class="mui-switch mui-active">'
+						    +'<div class="mui-switch-handle"></div></div></div>';
+						   dataLength++;
+						
+						
+						for (var j = 0; j < data[i].length; j++) {
+							if (data[i].OnOffList[j].deviceOnOrOff == 1) {
+								// 开功能
+								OnListFuncID[data[i].deviceName] = data[i].OnOffList[j].deviceFunctionId;
+							}
+							else {
+								// 关功能
+								OffListFuncID[data[i].deviceName] = data[i].OnOffList[j].deviceFunctionId;
+							}
+						}
+					}
+				}else{
+					i++;
+				}
+			}
+			mui('.mui-switch').switch();			
+		}
+		/*****************动态加载可添加设备列表  end*************/
+		
+		mui.plusReady(function () {
+			//alert("加载完啦！");
+			getData();
+			confirmBtn.addEventListener('click',function(){
+				if (inputBox.value.length == 0)
+					plus.nativeUI.toast("请输入组合名称");          
+				else 
+					OnConfirmBtn();
+			});
+			
+			mui.back = function() {
+				// console.log("这里");
+				var gm = plus.webview.getWebviewById('../group/group_main.html');
+				if (gm == null) {
+					console.log("gm is null");
+				}
+				mui.fire(gm, 'RefreshData', {});
+				plus.webview.currentWebview().hide('slide-out-right', 500, 'auto');
+			};
+			
+			// mui("#mySwitch").switch();
+		});
+	</script>
+
+</html>

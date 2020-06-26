@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="stylesheet" href="../css/mui.min.css">
+        <link rel="stylesheet" href="../css/login.css" />
+		<style>
+			html,
+			body {
+				background-color: #efeff4;
+			}
+			center{
+				margin-top: 0.7em;
+				color: white;
+			}
+			#addNewG{
+				color: white;
+				font-weight:bold ;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--*******************************头部导航栏begin************************************-->
+		<header id="header" class="mui-bar mui-bar-nav">
+			<!--<a id="massage"  class="mui-icon mui-action-menu mui-icon-chatboxes mui-pull-left" style="color: white;"></a>-->
+		   <!-- <a href="#" class="mui-icon  mui-icon-camera mui-pull-right" style="color: white;margin-right: 1em;"></a>--> 
+			<span id="title" class="mui-title">遥控器</span>
+			<a id="addNewG" class="mui-hidden" ></a>
+		</header>
+		<!--*******************************头部导航栏end************************************-->
+		
+		<!--*******************************底部导航栏begin**********************************-->
+		<nav class="mui-bar mui-bar-tab">
+			<a id="0" class="mui-tab-item mui-active">
+				<span class="mui-icon mui-icon-settings"></span>
+				<span class="mui-tab-label">遥控器</span>
+			</a>
+			<a id="1" class="mui-tab-item">
+				<span class="mui-icon mui-icon-home"></span>
+				<span class="mui-tab-label">组合模式</span>
+			</a>
+			<a id="2" class="mui-tab-item">
+				<span class="mui-icon mui-icon-videocam"></span>
+				<span class="mui-tab-label">视频信息</span>
+			</a>
+			<a id="3" class="mui-tab-item">
+				<span class="mui-icon mui-icon-contact"></span>
+				<span class="mui-tab-label">智慧功能</span>
+			</a>
+            <a id="4" class="mui-tab-item">
+                <span class="mui-icon mui-icon-contact"></span>
+                <span class="mui-tab-label">语音控制</span>
+            </a>
+		</nav>
+		<!--*******************************底部导航栏end**********************************-->
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" charset="utf-8"> 
+			 //mui初始化
+			mui.init({
+				swipeBack:false // 关闭侧滑功能
+			});
+			var subpages_name = ['遥控器', '组合模式', '视频信息', '智慧功能','语音控制'];
+			var subpages = ['telecontrol.html', '../group/group_main.html', '../video/video_main.html','../wisdom/wisdom_main.html','../iat.html'];
+			var subpages_webview = [];
+			var addComposePage; 
+			var subpage_style = {
+				top: '40px',
+				bottom: '51px', 
+				popGesture : "none"
+			};
+//创建子页面，首个选项卡页面显示，其它均隐藏，子页面模块，begin；
+			mui.plusReady(function() {
+				addComposePage = plus.webview.create('../group/group_second.html', 'group_second', {}, {});
+				
+				document.getElementById('addNewG').addEventListener('tap',function(){
+					addComposePage.evalJS('getData()');
+					addComposePage.show("slide-in-right", 300, false);
+				});
+				
+				var self = plus.webview.currentWebview();
+				for (var i = 0; i < 5; i++) {
+					subpages_webview[i] = plus.webview.create(subpages[i], subpages[i], subpage_style);
+					self.append(subpages_webview[i]);
+					if (i > 0) {
+						subpages_webview[i].hide();
+					}
+				}
+				
+				subpages_webview[0].show();
+			});
+			 //当前激活选项
+			var activeTab = 0;
+			var title = document.getElementById("title");
+			 //选项卡点击事件
+			mui('.mui-bar-tab').on('tap', 'a', function(e) {
+				var targetTab = this.id;
+				if (targetTab == activeTab) {
+					return;
+				}
+				
+				// 更换标题
+				document.getElementById('title').innerHTML = subpages_name[targetTab];
+				
+				
+				//组合页面自定义功能
+				if(targetTab == 1){
+					document.getElementById('addNewG').className = "mui-icon mui-icon-plusempty mui-pull-right";
+				}else{
+					document.getElementById('addNewG').className = "mui-hidden";
+				}
+				
+				subpages_webview[activeTab].hide();
+				subpages_webview[targetTab].show();
+				activeTab = targetTab;
+			});
+		</script>
+	</body>
+</html>

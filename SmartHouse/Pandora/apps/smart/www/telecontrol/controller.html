@@ -1,0 +1,289 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/login.css" />
+		<link rel="stylesheet" href="../css/app.css" />
+	
+	<style>
+		body{
+			/*background-color:#7fb2f1;*/
+			background: url(../img/background_img/control_bg.png) no-repeat;
+			background-size:300%;
+			background-position:25% 35% ;
+		}
+		.mui-content{
+			background-color:initial;
+		}
+	    .mui-grid-view.mui-grid-9{
+			border-radius:20px 20px 0px 0px;
+			box-shadow:0px 5px 8px rgba(202,202,202,0.2);
+			border: none;
+		}
+		.mui-content>.mui-table-view:first-child{
+			margin-top:100px;
+			margin-left: 10px;
+			margin-right: 10px;
+		}
+		.mui-bar.mui-bar-tab{
+			box-shadow: none;
+			background-color: initial;
+		}
+		.header{
+			box-shadow: none;
+			background-color: initial;
+		}
+		.television{
+		zoom: 20%;
+		}
+		.settopbox{
+		zoom: 20%;
+		}
+		.Ariconditioner{
+		zoom: 20%;
+		}
+		.lamp{
+			zoom: 20%;
+		}
+		.Sweep{
+			zoom: 20%;
+		}
+		.windows{
+			zoom: 20%;
+		}
+		.air{
+			zoom: 20%;
+		}
+		.Dehumidifier{
+			zoom: 20%;
+		}
+		.gas{
+			zoom: 20%;
+		}
+	    
+	    .title_icon{
+	    	zoom: 8%;
+	    	margin-right: 1.5em;
+	    }
+	    /*温度显示begin*/
+	    #temperature_number{
+	    	float: left;
+	    	margin: 1.5em 0em 0em 0.3em;
+	    	color: white;
+	    	font-size: 5em;
+	    }
+	    .oc{
+	    	float: left;
+	    	margin: 2.3em 0em;
+	    	color: white;
+	    	font-size: 3em;
+	    }
+	    .temperature_now{
+	    	color: white;
+	    	font-size: 1.1em;
+	    	position: absolute;
+	    	margin:3.5em 1.5em;
+	    }
+	    .wind{
+	    	background-color: white;
+	    	color: black;
+	    	font-size: 1em;
+	    	position: absolute;
+	    	margin:3.8em 6.8em;
+	    	padding:0.1em 0.3em;
+	    	border-radius:5px ;
+	    }
+	    #wind_type_icon{
+	    	zoom: 10%;
+	    }
+	    /*温度显示end*/
+	</style>
+	</head>
+	
+	<body>
+		<header  class="header mui-bar ">
+				<button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left" style="color: #FD843C;">
+				<span class="mui-icon mui-icon-left-nav" style="color: white;"></span>
+				<span style="color: white;"></span>
+			</button>
+				<h1 class="mui-title"></h1>
+		</header>
+		<div class="mui-content">
+			<!--遥控类型begin-->
+			<div class="type_bar">
+				<!--<!--<div  class="temperatures">
+					<span class="temperature_now">当前温度</span>
+					<span id="temperature_number">23</span>
+					<span class="oc">°C</span>
+				</div>
+				<div  class="wind">
+					<!--<img id="wind_type_icon" src="../img/main icon/left_right.png" />-->
+					<!--<span id="wind_type">左右扫风</span>-->
+				<!--</div>-->
+			</div>	
+			<!--<div class="type">
+			  <div id="control_type_name" class="type_name">空调</div>
+		    </div>-->
+		    <!--遥控类型end-->
+		</div>
+		<!--控制面板begin-->
+		<nav class="conteol_bar mui-bar mui-bar-tab">
+			<ul class="mui-table-view mui-grid-view mui-grid-9" id="allSwich">
+		            <!--<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+		            	<a href="#" id="condition_swich">
+		                    <span class="television"><img src="../img/main icon/on_off.png"></span>
+		                    <div class="mui-media-body" style="color: #eb4f38;">ON/OFF</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+		            	<a href="#" id="temp_up">
+		                    <span class="settopbox"><img src="../img/main icon/add.png"></span>
+		                    <div class="mui-media-body" style="color:#555;">升温</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+		            	<a href="#" id="condition_mode">
+		                    <span class="lamp"><img src="../img/main icon/modle.png"></span>
+		                    <div class="mui-media-body" style="color: #555;">模式</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+		            	<a href="#" id="corss_direction">
+		                    <span class="Ariconditioner"><img src="../img/main icon/left_right.png"></span>
+		                    <div class="mui-media-body"style="color:#555;">左右扫风</div></a></li>
+		           
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+		            	<a href="#" id="temp_down">
+		                    <span class="Sweep"><img src="../img/main icon/low.png"></span>
+		                    <div class="mui-media-body" style="color: #555;">降温</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+		            	<a href="#" id="vertical_direction">
+		                    <span class="windows"><img src="../img/main icon/up_down.png"></span>
+		                    <div class="mui-media-body" style="color:#555;">上下扫风</div></a></li>
+	                <li class="title_bottom mui-table-view-cell mui-media mui-col-sm-12 mui-col-xs-12">
+	                	<label><img id="title_type" class="title_icon" src="../img/gray/kongtiao.png"></label><span id="title_name">空调</span>
+	                </li>	    -->
+			</ul>        
+		       
+		</nav>		
+		<!--控制面板end-->	
+		
+		
+<script src="../js/mui.min.js"></script>
+<script src="../js/service.js"></script>
+<script src="../js/tools.js"></script>
+<script type="text/javascript">
+//本区域用来方式初始化的变量
+//初始化变量************begin**************************************
+var funcCodes = {};
+var isTimeout = false;
+var ContinueShow = true;
+//初始化变量************end*****************************************
+
+var Timeout = function() {
+	if (isTimeout) {
+		ContinueShow = false;
+		plus.nativeUI.closeWaiting();
+		plus.nativeUI.toast('数据获取超时，请稍后再试');
+	}
+};
+
+
+//mui初始化
+mui.init({
+	
+});
+
+
+
+var getData = function(UserID, deviceID){
+	
+	isTimeout = true;
+	ContinueShow = true;
+	setTimeout(Timeout, 7000);
+	
+	
+	var getContacts = { 
+		reqKey: "SmartHouse_getdevicefunction",
+		input:{
+			UserID:UserID,
+			deviceID:deviceID
+			}
+		};
+		// console.log(JSON.stringify(getContacts));
+	    service.OnDoPostServerJson(getContacts, false, false, function(jsonData){//jsonData即返回的json数据 并且为json格式
+	    	isTimeout = false;
+	    	var readyCode = 0;
+			if (jsonData.result == 0){
+	  				if(jsonData["ansData"]){
+		  				dealData(jsonData["ansData"]);
+		  				readyCode = 0;
+	  				}
+	  				else {
+	  					readyCode = -1;
+	  				}
+	  			} else {
+					plus.nativeUI.toast(jsonData.result);
+					readyCode = -2;
+				}
+	  			
+	  			if (ContinueShow) {
+		    		console.log("readyCode = " + readyCode);
+					var tel_webview = plus.webview.getWebviewById('telecontrol.html');
+					mui.fire(tel_webview, 'subPageDataReady', 
+					{
+						isReady : readyCode
+					});
+				}
+			}
+	    );
+			
+		};
+		
+		function dealData(data){
+			funcCodes = {};
+			var allSwitch = document.getElementById("allSwich");
+			allSwitch.innerHTML = "";
+			for(var i = 0; i < data.length; i++){
+				allSwitch.innerHTML+='<li devicefunctionID = "'+ data[i].devicefunctionID +'" class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">'
+		            	+'<a href="#">'
+		                +'<span class="swich_icon">'
+		                +'<img src="' + data[i].devicefunctionPicture + '"></span>'
+		                +'<div class="mui-media-body" style="color: #eb4f38;">'+ data[i].devicefunctionName + '</div>'
+		                +'</a></li>';
+		        funcCodes[data[i].deviceFunctionId] = data[i].deviceCode;
+			}
+	
+		}
+//页面加载完成后执行
+mui.plusReady(function() {
+	mui.back = function() {
+		plus.webview.currentWebview().hide();
+	};
+	
+	mui("#allSwich").on('tap', 'li', function () {
+		var funcID = this.getAttribute("devicefunctionID");
+		var data = {
+			ip: "192.168.10.119",
+			port: "80",
+            controllCode: funcCodes[funcID]
+       	};
+        var notiClass = plus.ios.importClass("NSNotificationCenter");
+            notiClass.defaultCenter().postNotificationNameobject("PostControllCodes", JSON.stringify(data));
+	});
+});	
+
+//本区域用来编辑控件的响应时间****************************************
+//控件绑定响应事件************begin**********************************
+//提交反馈相应事件
+
+
+
+//控件绑定事件响应************end************************************
+
+//一下区域用来书本页公用写函数
+//方法************begin**********************************
+
+//方法************end************************************
+</script>
+</body>
+
+</html>
